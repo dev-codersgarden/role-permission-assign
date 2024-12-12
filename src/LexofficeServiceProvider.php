@@ -54,8 +54,10 @@ class LexofficeServiceProvider extends ServiceProvider
 
     protected function ensureComposableFolderAndPublishFile()
     {
-        $composablePath = resource_path('/../composable');
-        $roleJsSourcePath = __DIR__ . '/../resources/js/composable/role.js';
+        $composablePath = resource_path('js/composable');
+
+        $roleJsSourcePath = __DIR__ . '/../composable/role.js';
+
         $roleJsTargetPath = $composablePath . '/role.js';
 
         // Create the composable folder if it doesn't exist
@@ -66,6 +68,8 @@ class LexofficeServiceProvider extends ServiceProvider
         // Publish the role.js file
         if (File::exists($roleJsSourcePath)) {
             File::copy($roleJsSourcePath, $roleJsTargetPath);
+        } else {
+            throw new \Exception("Source file not found: {$roleJsSourcePath}");
         }
     }
 
