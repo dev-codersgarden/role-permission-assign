@@ -3,6 +3,7 @@
 namespace Codersgarden\RolePermissionAssign;
 
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Facades\File;
 
 class LexofficeServiceProvider extends ServiceProvider
 {
