@@ -24,6 +24,9 @@
             "email": "info.codersgarden@gmail.com"
         }
     ],
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "prefer-stable": true
 }
+
+
+
