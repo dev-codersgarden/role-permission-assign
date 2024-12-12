@@ -9,15 +9,13 @@ class LexofficeServiceProvider extends ServiceProvider
     public function register()
     {
 
-        $this->mergeConfigFrom(__DIR__ . '/../config/lexoffice.php', 'lexoffice');
     }
 
     public function boot()
     {
 
         $this->publishes([
-            __DIR__ . '/../config/lexoffice.php' => config_path('lexoffice.php'),
-
+           
             __DIR__ . '/../routes/Role.php' => base_path('routes/RolePermission.php'),
 
             __DIR__ . '/../resources/js/Pages/Roles/' => resource_path('js/Pages/Roles'),
