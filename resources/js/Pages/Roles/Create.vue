@@ -1,14 +1,8 @@
 <script setup>
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
 import { Head, Link, useForm } from '@inertiajs/vue3';
-import Breadcrumb from '@/Components/Misc/Breadcrumb.vue';
+
 import { reactive, computed } from 'vue';
-import { useGeneral } from '@/Composable/General';
-import { useI18n } from 'vue-i18n';
-
-const { t } = useI18n();
-const { asset } = useGeneral();
-
 
 const form = useForm({
     name: '',
@@ -22,23 +16,23 @@ const handleSubmit = () => {
         },
     });
 };
-const breadcrumbData = computed(() => ({
-    pageTitle: "Roles",
-    pageLinks: [
-        {
-            "name": 'Roles',
-            "route": "roles.index",
-        },
-        {
-            "name": 'Create Role',
-        }
-    ]
-}));
+// const breadcrumbData = computed(() => ({
+//     pageTitle: "Roles",
+//     pageLinks: [
+//         {
+//             "name": 'Roles',
+//             "route": "roles.index",
+//         },
+//         {
+//             "name": 'Create Role',
+//         }
+//     ]
+// }));
 </script>
 
 <template>
 
-    <Head title="Create Role" />
+    <!-- <Head title="Create Role" /> -->
 
     <AuthenticatedLayout>
         <div class="row justify-content-center add-edit-page">
@@ -48,7 +42,7 @@ const breadcrumbData = computed(() => ({
                     <div class="row  justify-content-start">
                         <div class="col-md-4 col-lg-6 col-xxl-7 mb-3">
                             <div class="page-title">
-                                <Breadcrumb :data="breadcrumbData" />
+                                <!-- <Breadcrumb :data="breadcrumbData" /> -->
                             </div>
                         </div>
                     </div>
@@ -62,7 +56,7 @@ const breadcrumbData = computed(() => ({
                                             <div class="header-right">
                                                 <button type="submit" class="btn btn-primary float-end"
                                                     :disabled="form.processing">
-                                                    <img :src="asset('assets/svg/save-icon.svg')">
+                                                    <!-- <img :src="asset('assets/svg/save-icon.svg')"> -->
                                                     Save
                                                 </button>
 

@@ -1,9 +1,9 @@
 <script setup>
-import Breadcrumb from '@/Components/Misc/Breadcrumb.vue';
+
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
 import { Head, Link } from '@inertiajs/vue3';
 import { reactive, computed } from 'vue';
-import { useI18n } from 'vue-i18n';
+
 import axios from 'axios';
 import { toast } from 'vue3-toastify';
 
@@ -21,18 +21,18 @@ const props = defineProps({
     },
 });
 
-const breadcrumbData = computed(() => ({
-    pageTitle: "Role Permissions" + ' - ' + props.role.name,
-    pageLinks: [
-        {
-            name: 'Roles',
-            route: 'roles.index',
-        },
-        {
-            name: 'Role Permissions',
-        },
-    ],
-}));
+// const breadcrumbData = computed(() => ({
+//     pageTitle: "Role Permissions" + ' - ' + props.role.name,
+//     pageLinks: [
+//         {
+//             name: 'Roles',
+//             route: 'roles.index',
+//         },
+//         {
+//             name: 'Role Permissions',
+//         },
+//     ],
+// }));
 
 // Check if permission is already assigned
 const isAssigned = (permissionId) => {
@@ -67,7 +67,7 @@ const togglePermission = async (permissionId, checked) => {
 
 <template>
 
-    <Head title="Permissions Assignment" />
+    <!-- <Head title="Permissions Assignment" /> -->
     <AuthenticatedLayout>
         <div class="row justify-content-center add-edit-page">
             <div class="container-fluid my-5">
@@ -75,7 +75,7 @@ const togglePermission = async (permissionId, checked) => {
                 <div class="row  justify-content-start">
                     <div class="col-md-4 col-lg-6 col-xxl-7 mb-3">
                         <div class="page-title">
-                            <Breadcrumb :data="breadcrumbData" />
+                            <!-- <Breadcrumb :data="breadcrumbData" /> -->
                         </div>
                     </div>
                     <div class="col-md-8 col-lg-6 col-xxl-5 mb-3">

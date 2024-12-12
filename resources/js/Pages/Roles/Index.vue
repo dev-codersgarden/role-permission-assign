@@ -2,17 +2,13 @@
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
 import { Head, Link } from '@inertiajs/vue3';
 import Pagination from '@/Components/Misc/Pagination.vue';
-import { useGeneral } from "@/Composable/General";
+import { useGeneral } from "@/Composable/role";
 
 import { useForm } from '@inertiajs/vue3';
 import { reactive, watch,computed } from 'vue';
 import { throttle } from 'lodash';
-import Breadcrumb from '@/Components/Misc/Breadcrumb.vue';
 
-import { useI18n } from 'vue-i18n';
-const { t } = useI18n();
-
-const { confirmDelete, checkPermission, asset } = useGeneral();
+const { checkPermission } = useGeneral();
 
 const props = defineProps({
 
@@ -45,24 +41,24 @@ const sort = (column) => {
         preserveState: false,
     });
 }
-const breadcrumbData = computed(() => ({
-    pageTitle: 'Roles',
-    pageLinks: [
-        {
-            "name": 'Roles',
-            "route": "roles.index",
-        },
-        {
-            "name": 'Index',
-        }
-    ]
-}));
+// const breadcrumbData = computed(() => ({
+//     pageTitle: 'Roles',
+//     pageLinks: [
+//         {
+//             "name": 'Roles',
+//             "route": "roles.index",
+//         },
+//         {
+//             "name": 'Index',
+//         }
+//     ]
+// }));
 
 </script>
 
 <template>
 
-    <Head title="Roles" />
+    <!-- <Head title="Roles" /> -->
 
     <AuthenticatedLayout>
         <div class="row justify-content-center">
@@ -72,13 +68,13 @@ const breadcrumbData = computed(() => ({
                     <div class="col-md-4 col-lg-6 col-xxl-7 mb-3">
                         <div class="page-title">
 
-                            <Breadcrumb :data="breadcrumbData" />
+                            <!-- <Breadcrumb :data="breadcrumbData" /> -->
                         </div>
                     </div>
                     <div class="col-md-8 col-lg-6 col-xxl-5 mb-3">
                         <div class="header-right">
                             <div class="search-box">
-                                <img :src="asset('assets/svg/search-icon.svg')" class="first-search-icon">
+                                <!-- <img :src="asset('assets/svg/search-icon.svg')" class="first-search-icon"> -->
                                 <input type="text" class="form-control" v-model="form.search"
                                   placeholder="Search">
                                 <Link :href="route(route().current())" class="last-cross-icon">
@@ -88,7 +84,7 @@ const breadcrumbData = computed(() => ({
 
                             <Link :href="route('roles.create')" class="btn btn-primary float-end"
                                 v-if="checkPermission('roles.create')">
-                            <img :src="asset('assets/svg/plus-icon.svg')">
+                            <!-- <img :src="asset('assets/svg/plus-icon.svg')"> -->
                             Create Role
                             </Link>
                         </div>
