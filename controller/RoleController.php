@@ -44,7 +44,9 @@ class RoleController extends Controller
     }
 
     public function create()
-    {
+    {   
+
+        // return Inertia::render('CreatePage');
         return Inertia::render('Roles/Create');
     }
 
