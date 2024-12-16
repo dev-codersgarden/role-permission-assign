@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\File;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Route;
 
-class LexofficeServiceProvider extends ServiceProvider
+class RoleServiceProvider extends ServiceProvider
 {
     public function register()
     {
